@@ -1,0 +1,7 @@
+name: reporter
+
+packages:
+  - packages/*
+scripts:
+  analyze:
+    exec: dart analyze .

@@ -1,15 +1,6 @@
-name: reporter
-description: A package that helps prepare tabular reports.
-version: 0.0.1
-repository: https://github.com/Bdaya-Dev/reporter
+name: reporter_workspace
 
 environment:
-  sdk: ^3.0.6
-
-# dependencies:
-
+  sdk: '>=2.18.0 <3.0.0'
 dev_dependencies:
-  lints: ^2.0.0
-  test: ^1.21.0
-dependencies:
-  collection: ^1.18.0
+  melos: ^3.1.1
