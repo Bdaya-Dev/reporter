@@ -1,6 +1,4 @@
 # Reporter
-![Pub Version](https://img.shields.io/pub/v/reporter)
-![Pub Version](https://img.shields.io/pub/v/reporter_html)
 ![GitHub last commit on main](https://img.shields.io/github/last-commit/Bdaya-Dev/reporter/main)
 
 A standard for generating reports in pure dart.

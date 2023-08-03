@@ -1,3 +1,9 @@
+# Reporter HTML plugin
+![Pub Version](https://img.shields.io/pub/v/reporter_html)
+![GitHub last commit on main](https://img.shields.io/github/last-commit/Bdaya-Dev/reporter/main)
+
+
+
 An addon for the `reporter` package to support html.
 
 ## Usage
