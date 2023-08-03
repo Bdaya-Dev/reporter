@@ -5,63 +5,6 @@ import 'config.dart';
 
 /// An html generator for [TabularReporter]
 class TabularReporterHtml {
-  /*
-  <table>
-    <thead>
-      <tr>
-          <th rowspan="3">Client</th>
-          <th colspan="4">Payments</th>
-      </tr>
-      <tr>
-          <th rowspan='2'>Reason</th>
-          <th rowspan='2'>Total To Pay</th>
-          <th colspan='2'>Instances</th>
-      </tr>
-      <tr>
-          <th>Date</th>
-          <th>Amount</th>
-      </tr>
-    </thead>
-    
-    <tr>
-        <td rowspan="6">Person1</td>
-        <td rowspan="3">Project1</td>
-        <td rowspan="3">5000</td>
-        <td>01-08-2023</td>
-        <td>2000</td>
-    </tr>
-    <tr>
-        <td>15-08-2023</td>
-        <td>1500</td>
-    </tr>
-    <tr>
-        <td>30-08-2023</td>
-        <td>1500</td>
-    </tr>
-    <tr>
-        <td>Project2</td>
-        <td>1000</td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td rowspan="2">Project3</td>
-        <td rowspan="2">4000</td>
-        <td>01-08-2023</td>
-        <td>1000</td>
-    </tr>
-    <tr>
-        <td>15-08-2023</td>
-        <td>2000</td>
-    </tr>
-    <tr>
-        <td rowspan="1">Person2</td>
-        <td rowspan="1">Project4</td>
-        <td rowspan="1">0</td>
-    </tr>
-</table>
-
-   */
   static Element _registerElement(String tag, {Element? parent}) {
     final e = Element.tag(tag);
     if (parent != null) {

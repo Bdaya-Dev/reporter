@@ -1,14 +1,14 @@
 name: reporter_html
-description: A starting point for Dart libraries or applications.
+description: An addon for the package `reporter`` that helps prepare html reports.
 version: 0.0.1
-# repository: https://github.com/my_org/my_repo
+repository: https://github.com/Bdaya-Dev/reporter/tree/main/packages/reporter_html
 
 environment:
   sdk: ^3.0.6
 
 dependencies:
-  html: ^0.15.4
-  reporter: ^0.1.0
+  html: ">=0.15.4 <1.0.0"
+  reporter: ">=0.1.0 <1.0.0"
   collection: ^1.18.0
 
 dev_dependencies:

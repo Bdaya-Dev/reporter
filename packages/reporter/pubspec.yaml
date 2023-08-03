@@ -6,11 +6,10 @@ repository: https://github.com/Bdaya-Dev/reporter
 environment:
   sdk: ^3.0.6
 
-# dependencies:
-
+dependencies:
+  collection: ^1.18.0
+  
 dev_dependencies:
   lints: ^2.0.0
   test: ^1.21.0
-  
-dependencies:
-  collection: ^1.18.0
+
