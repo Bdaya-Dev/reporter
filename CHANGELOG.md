@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`reporter_html` - `v0.0.2`](#reporter_html---v002)
+
+---
+
+#### `reporter_html` - `v0.0.2`
+
+ - Fixed repo url
+
+
+## 2023-08-03
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`reporter` - `v0.1.0`](#reporter---v010)
  - [`reporter_html` - `v0.0.1+1`](#reporter_html---v0011)
 
