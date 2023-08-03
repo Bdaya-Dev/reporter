@@ -4,5 +4,4 @@
 library;
 
 export 'src/reporter_html_base.dart';
-
-// TODO: Export any libraries intended for clients of this package.
+export 'src/config.dart';

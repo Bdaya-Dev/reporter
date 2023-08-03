@@ -1,8 +1,79 @@
+import 'package:collection/collection.dart';
 import 'package:reporter/reporter.dart';
 
 /// A utility class for generating tabular reports (like spreadsheets)
 /// from arbitrary data.
 class TabularReporter {
+  static List<ReportCalculatedRange> calculateHeaderCells({
+    required List<ReportColumn> columns,
+    int offsetRowIndex = 0,
+    int offsetColumnIndex = 0,
+  }) {
+    if (columns.isEmpty) {
+      return [];
+    }
+
+    final parents = ReportColumn.generateParentsMap(columns);
+    final allColumns = ReportColumn.generateColumnMap(columns);
+    final res = <ReportCalculatedRange>[];
+    _calculateHeaderCells(
+      allColumns: allColumns,
+      columns: columns,
+      offsetColumnIndex: offsetColumnIndex,
+      offsetRowIndex: offsetRowIndex,
+      parents: parents,
+      res: res,
+    );
+    return res;
+  }
+
+  static void _calculateHeaderCells({
+    required List<ReportColumn> columns,
+    required List<ReportCalculatedRange> res,
+    required Map<String, ReportColumn> allColumns,
+    required Map<String, Set<String>> parents,
+    required int offsetRowIndex,
+    required int offsetColumnIndex,
+  }) {
+    if (columns.isEmpty) {
+      return;
+    }
+    var rowIndex = offsetRowIndex;
+    var columnIndex = offsetColumnIndex;
+    final maxDepth = columns.map((e) => e.maxDepth).max;
+    for (var column in columns) {
+      final colSpan = column.columnSpan;
+      final rowSpan = maxDepth - column.maxDepth + 1;
+      res.add(
+        ReportCalculatedRange(
+          range: ReportRange(
+            rowIndex: rowIndex,
+            colSpan: colSpan,
+            columnIndex: columnIndex,
+            rowSpan: rowSpan,
+          ),
+          columnIds: {
+            ...?parents[column.id],
+            column.id,
+          },
+          directColumnId: column.id,
+          value: column.name,
+          metadata: column.metadata,
+        ),
+      );
+      _calculateHeaderCells(
+        allColumns: allColumns,
+        columns: column.children,
+        offsetRowIndex: rowIndex + 1,
+        offsetColumnIndex: columnIndex,
+        parents: parents,
+        res: res,
+      );
+
+      columnIndex += colSpan;
+    }
+  }
+
   /// Takes the rows and columns and transforms them to ranges with values.
   static List<ReportCalculatedRange> calculateCells({
     required List<ReportRow> rows,
@@ -10,7 +81,7 @@ class TabularReporter {
     int offsetRowIndex = 0,
     int offsetColumnIndex = 0,
   }) {
-    if (rows.isEmpty) {
+    if (rows.isEmpty || columns.isEmpty) {
       return [];
     }
     final leafColumns = ReportColumn.getColumnsWithNoChildren(columns).toList();
@@ -43,8 +114,7 @@ class TabularReporter {
     required int offsetColumnIndex,
   }) {
     int visibleRowIndex = offsetRowIndex;
-    for (var rowIndex = 0; rowIndex < rows.length; rowIndex++) {
-      final row = rows[rowIndex];
+    for (var row in rows) {
       for (var assignmentEntry in row.columnAssignments.entries) {
         final columnId = assignmentEntry.key;
         final column = leafMap[columnId];

@@ -5,10 +5,11 @@ class ReportCalculatedRange {
   /// The range
   final ReportRange range;
 
-  /// All the columns this cell belongs to
+  /// All the columns this cell belongs to.
+  /// if the range represents a column, it will also be included here.
   final Set<String> columnIds;
 
-  /// The column that's directly above this cell
+  /// The column that's directly above this range, or this range itself if it represented a column
   final String directColumnId;
 
   final Object? value;

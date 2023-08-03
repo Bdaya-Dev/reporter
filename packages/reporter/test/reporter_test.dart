@@ -130,16 +130,73 @@ void main() {
     });
   });
 
-  test('Calculate cells golden test', () {
-    /*
-Person1  Project1	5000	01-08-2023	2000
-			15-08-2023	1500
-			30-08-2023	1500
-	Project2	1000		
-	Project3	4000	01-08-2023	1000
-			15-08-2023	3000
+  test('Calculate header cells golden test', () {
+    final golden = <ReportRange, dynamic>{
+      ReportRange(
+        rowIndex: 0,
+        columnIndex: 0,
+        rowSpan: 3,
+        colSpan: 1,
+      ): columns[0].name,
+      ReportRange(
+        rowIndex: 0,
+        columnIndex: 1,
+        rowSpan: 1,
+        colSpan: 4,
+      ): columns[1].name,
+      ReportRange(
+        rowIndex: 1,
+        columnIndex: 1,
+        rowSpan: 2,
+        colSpan: 1,
+      ): columns[1].children[0].name,
+      ReportRange(
+        rowIndex: 1,
+        columnIndex: 2,
+        rowSpan: 2,
+        colSpan: 1,
+      ): columns[1].children[1].name,
+      ReportRange(
+        rowIndex: 1,
+        columnIndex: 3,
+        rowSpan: 1,
+        colSpan: 2,
+      ): columns[1].children[2].name,
+      ReportRange(
+        rowIndex: 2,
+        columnIndex: 3,
+        rowSpan: 1,
+        colSpan: 1,
+      ): columns[1].children[2].children[0].name,
+      ReportRange(
+        rowIndex: 2,
+        columnIndex: 4,
+        rowSpan: 1,
+        colSpan: 1,
+      ): columns[1].children[2].children[1].name,
+    };
+    const rowOffset = 0;
+    const colOffset = 0;
+    final cells = TabularReporter.calculateHeaderCells(
+      columns: columns,
+      offsetColumnIndex: colOffset,
+      offsetRowIndex: rowOffset,
+    );
 
-     */
+    final toCompare = Map.fromEntries(
+      cells.map((e) => MapEntry(e.range, e.value)),
+    );
+    expect(
+      toCompare,
+      golden.map(
+        (key, value) => MapEntry(
+          key.shiftRowsBy(rowOffset).shiftColumnsBy(colOffset),
+          value,
+        ),
+      ),
+    );
+  });
+  test('Calculate cells golden test', () {
     final golden = <ReportRange, dynamic>{
       //Client
       ReportRange(

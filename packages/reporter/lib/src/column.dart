@@ -72,24 +72,3 @@ class ReportColumn {
     }
   }
 }
-
-// class TypedReportColumn<T> extends ReportColumn {
-//   const TypedReportColumn.fromAssignment({
-//     required super.id,
-//     required super.name,
-//     required this.getAssigment,
-//     super.children,
-//     super.metadata,
-//   });
-
-//   TypedReportColumn({
-//     required super.id,
-//     required super.name,
-//     required dynamic Function(T item) getValue,
-//     super.children,
-//     super.metadata,
-//   }) : getAssigment = ((T item) =>
-//             ReportColumnValueAssignment(value: getValue(item)));
-
-//   final ReportColumnValueAssignment? Function(T item) getAssigment;
-// }

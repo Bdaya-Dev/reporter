@@ -14,6 +14,12 @@ A standard for generating reports in pure dart.
 * Language independent, can be adapted for Excel, Html, Pdf, Markdown, txt, etc ...
 * Surprisingly easy to use.
 
+## Getting started
+
+1. Depend on the `reporter` package `dart pub add reporter`
+2. Optionally depend on other specific generators like `reporter_html`, `reporter_syncfusion_flutter_xlsio`, etc...
+3. Use `TabularReporter.calculateCells` to calculate the cells from rows and columns
+
 ## Example
 
 Checkout the [example](example/reporter_example.dart) to see how to generate this table:
@@ -69,5 +75,3 @@ Checkout the [example](example/reporter_example.dart) to see how to generate thi
         <td rowspan="1">0</td>
     </tr>
 </table>
-
----
