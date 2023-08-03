@@ -22,7 +22,7 @@ A standard for generating reports in pure dart.
 
 ## Example
 
-Checkout the [example](example/reporter_example.dart) to see how to generate this table:
+Checkout the [example](../reporter_html/example/reporter_html_example.dart) to see how to generate this table:
 
 <table>
     <tr>
