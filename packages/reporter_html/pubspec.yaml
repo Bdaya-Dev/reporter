@@ -1,14 +1,17 @@
 name: reporter_html
 description: An addon for the package `reporter`` that helps prepare html reports.
-version: 0.0.2+1
+version: 0.0.3
 repository: https://github.com/Bdaya-Dev/reporter/tree/main/packages/reporter_html
-
+topics:
+  - reports
+  - html
+  - table
 environment:
   sdk: ^3.0.6
 
 dependencies:
   html: ">=0.15.4 <1.0.0"
-  reporter: ^0.1.0+1
+  reporter: ^0.1.1
   collection: ^1.18.0
 
 dev_dependencies:

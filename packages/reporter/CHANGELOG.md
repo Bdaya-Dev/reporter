@@ -1,3 +1,7 @@
+## 0.1.1
+
+ - update topics
+
 ## 0.1.0+1
 
  - update readme
