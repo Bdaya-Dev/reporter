@@ -1,3 +1,7 @@
+## 0.1.0
+
+ - **FEAT**: add assignFullTableFromRowsAndColumns.
+
 ## 0.0.2
 
 ## 0.0.1+1

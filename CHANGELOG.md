@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`reporter_syncfusion_flutter_xlsio` - `v0.1.0`](#reporter_syncfusion_flutter_xlsio---v010)
+
+---
+
+#### `reporter_syncfusion_flutter_xlsio` - `v0.1.0`
+
+ - **FEAT**: add assignFullTableFromRowsAndColumns.
+
+
+## 2023-08-04
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`reporter` - `v0.1.4`](#reporter---v014)
  - [`reporter_html` - `v0.0.5`](#reporter_html---v005)
  - [`reporter_syncfusion_flutter_xlsio` - `v0.0.2`](#reporter_syncfusion_flutter_xlsio---v002)
