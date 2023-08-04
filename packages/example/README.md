@@ -2,10 +2,11 @@
 # Reporter Example
 
 [![Deploy to Pages](https://github.com/Bdaya-Dev/reporter/actions/workflows/pages.yml/badge.svg)](https://github.com/Bdaya-Dev/reporter/actions/workflows/pages.yml)
+[![View Live](https://img.shields.io/badge/view%20live%20website-8A2BE2)](https://bdaya-dev.github.io/reporter/)
 
 An example project showing usage of the `reporter` package in flutter.
 
-[View example live](https://bdaya-dev.github.io/reporter/)
+
 
 ## Preview
 

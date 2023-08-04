@@ -11,11 +11,12 @@ Check the dedicated [example project](../example)
 
 ## Features
 
-* Build tabular reports with ease.
+* Build tabular reports.
 * Handles column nesting (colspan).
 * Handles row nesting (rowspan).
-* Full customizable.
-* Language independent, can be adapted for Excel, Html, Pdf, Markdown, txt, etc ...
+* Fully customizable.
+* Unopinionated.
+* Format independent, can be adapted for Excel, Html, Pdf, Markdown, txt, etc ...
 * Surprisingly easy to use.
 
 ## Getting started
@@ -23,19 +24,13 @@ Check the dedicated [example project](../example)
 1. Depend on the `reporter` package `dart pub add reporter`
 2. Use `TabularReporter.calculateHeaderCells` to calculate the header cells from columns.
 3. Use `TabularReporter.calculateCells` to calculate the body cells from rows and columns.
-4. Optionally depend on other specific generators like `reporter_html`, `reporter_syncfusion_flutter_xlsio`, etc...
+4. Optionally depend on other specific generators
+   * [reporter_html](https://pub.dev/packages/reporter_html) for generating html elements.
+   * [reporter_syncfusion_flutter_xlsio](https://pub.dev/packages/reporter_syncfusion_flutter_xlsio) for generating excel files.
 
 ## Preview
 
 <div>
-    <style>
-        table,
-        tr,
-        th,
-        td {
-            border: 1px solid black;
-        }
-    </style>
     <table>
         <thead>
             <tr>
