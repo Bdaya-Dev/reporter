@@ -1,3 +1,7 @@
+## 0.1.3
+
+ - readme changes
+
 ## 0.1.2
 
  - Dedicated example project
