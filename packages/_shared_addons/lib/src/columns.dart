@@ -1,7 +1,7 @@
 import 'package:_shared/_shared.dart';
 import 'package:reporter/reporter.dart';
 
-final columns = <ReportColumn>[
+final myColumns = <ReportColumn>[
   const ReportColumn(
     id: MyClient.kname,
     name: 'Client',

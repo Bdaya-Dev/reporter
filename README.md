@@ -10,3 +10,8 @@ A standard for generating reports in pure dart.
 * [reporter](packages/reporter/)
 * [reporter_html](packages/reporter_html/)
 * [reporter_syncfusion_flutter_xlsio](packages/reporter_syncfusion_flutter_xlsio/)
+
+## Building the repository
+
+* [install melos cli](https://melos.invertase.dev/~melos-latest/getting-started) `dart pub global activate melos`
+* run `melos bs`

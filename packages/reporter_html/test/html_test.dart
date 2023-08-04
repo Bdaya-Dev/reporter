@@ -68,7 +68,7 @@ void main() {
 
       final generatedElement =
           TabularReporterHtml.generateFullTableFromRowsAndColumns(
-        columns: columns,
+        columns: myColumns,
         rows: mapDataToRows(sampleData),
       );
 
