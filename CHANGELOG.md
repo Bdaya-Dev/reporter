@@ -15,6 +15,39 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`reporter` - `v0.1.4+1`](#reporter---v0141)
+ - [`reporter_html` - `v0.0.6`](#reporter_html---v006)
+ - [`reporter_syncfusion_flutter_xlsio` - `v0.1.0+1`](#reporter_syncfusion_flutter_xlsio---v0101)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `reporter_syncfusion_flutter_xlsio` - `v0.1.0+1`
+
+---
+
+#### `reporter` - `v0.1.4+1`
+
+ - readme update
+
+#### `reporter_html` - `v0.0.6`
+
+ - **FEAT**: improved tests.
+
+
+## 2023-08-04
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`reporter_syncfusion_flutter_xlsio` - `v0.1.0`](#reporter_syncfusion_flutter_xlsio---v010)
 
 ---

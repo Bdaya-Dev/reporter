@@ -1,3 +1,7 @@
+## 0.1.4+1
+
+ - readme update
+
 ## 0.1.4
 
  - fix example link

@@ -1,3 +1,7 @@
+## 0.0.6
+
+ - **FEAT**: improved tests.
+
 ## 0.0.5
 
  - fix example link

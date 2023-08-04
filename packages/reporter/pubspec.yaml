@@ -1,6 +1,6 @@
 name: reporter
 description: A package that helps prepare tabular reports.
-version: 0.1.4
+version: 0.1.4+1
 repository: https://github.com/Bdaya-Dev/reporter/tree/main/packages/reporter
 topics:
   - reports
