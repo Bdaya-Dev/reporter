@@ -1,16 +1,70 @@
-# example
 
-A new Flutter project.
+# Reporter Example
 
-## Getting Started
+An example project showing usage of the `reporter` package in flutter.
 
-This project is a starting point for a Flutter application.
+## Preview
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<div>
+    <style>
+        table,
+        tr,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+    <table>
+        <thead>
+            <tr>
+                <th rowspan="3" colspan="1">Client</th>
+                <th rowspan="1" colspan="4">payments</th>
+            </tr>
+            <tr>
+                <th rowspan="2" colspan="1">reason</th>
+                <th rowspan="2" colspan="1">total to pay</th>
+                <th rowspan="1" colspan="2">instances</th>
+            </tr>
+            <tr>
+                <th rowspan="1" colspan="1">date</th>
+                <th rowspan="1" colspan="1">amount</th>
+            </tr>
+        </thead>
+        <thead>
+            <tr>
+                <th rowspan="6" colspan="1">person1</th>
+                <th rowspan="3" colspan="1">project1</th>
+                <th rowspan="3" colspan="1">5000.0</th>
+                <th rowspan="1" colspan="1">2023-08-01 00:00:00.000</th>
+                <th rowspan="1" colspan="1">2000.0</th>
+            </tr>
+            <tr>
+                <th rowspan="1" colspan="1">2023-08-15 00:00:00.000</th>
+                <th rowspan="1" colspan="1">1500.0</th>
+            </tr>
+            <tr>
+                <th rowspan="1" colspan="1">2023-08-30 00:00:00.000</th>
+                <th rowspan="1" colspan="1">1500.0</th>
+            </tr>
+            <tr>
+                <th rowspan="1" colspan="1">project2</th>
+                <th rowspan="1" colspan="1">1000.0</th>
+            </tr>
+            <tr>
+                <th rowspan="2" colspan="1">project3</th>
+                <th rowspan="2" colspan="1">4000.0</th>
+                <th rowspan="1" colspan="1">2023-09-01 00:00:00.000</th>
+                <th rowspan="1" colspan="1">1000.0</th>
+            </tr>
+            <tr>
+                <th rowspan="1" colspan="1">2023-09-15 00:00:00.000</th>
+                <th rowspan="1" colspan="1">2000.0</th>
+            </tr>
+            <tr>
+                <th rowspan="1" colspan="1">person2</th>
+                <th rowspan="1" colspan="1">project4</th>
+                <th rowspan="1" colspan="1">0.0</th>
+            </tr>
+        </thead>
+    </table>
+</div>
