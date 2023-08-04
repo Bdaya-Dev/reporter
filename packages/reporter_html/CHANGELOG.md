@@ -1,3 +1,7 @@
+## 0.0.4
+
+ - Dedicated example project
+
 ## 0.0.3
 
  - update topics
