@@ -6,14 +6,6 @@ An example project showing usage of the `reporter` package in flutter.
 ## Preview
 
 <div>
-    <style>
-        table,
-        tr,
-        th,
-        td {
-            border: 1px solid black;
-        }
-    </style>
     <table>
         <thead>
             <tr>
