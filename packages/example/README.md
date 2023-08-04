@@ -3,6 +3,8 @@
 
 An example project showing usage of the `reporter` package in flutter.
 
+[View example live](https://bdaya-dev.github.io/reporter/)
+
 ## Preview
 
 <div>

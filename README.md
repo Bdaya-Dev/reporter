@@ -3,7 +3,7 @@
 
 A standard for generating reports in pure dart.
 
-* Check the [example project](packages/example)
+* Check the [example project](packages/example).
 
 ## packages
 
