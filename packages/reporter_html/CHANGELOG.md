@@ -1,3 +1,7 @@
+## 0.0.5
+
+ - fix example link
+
 ## 0.0.4+1
 
  - Update a dependency to the latest release.

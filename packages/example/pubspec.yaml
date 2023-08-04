@@ -10,13 +10,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  reporter_syncfusion_flutter_xlsio: ^0.0.1+1
+  reporter_syncfusion_flutter_xlsio: ^0.0.2
   cupertino_icons: ^1.0.2
   syncfusion_flutter_xlsio: ^22.2.7
   file_saver: ^0.2.7
   html: ^0.15.4
-  reporter: ^0.1.3
-  reporter_html: ^0.0.4+1
+  reporter: ^0.1.4
+  reporter_html: ^0.0.5
   collection: ^1.17.1
 
 dev_dependencies:
