@@ -1,10 +1,41 @@
+import 'package:collection/collection.dart';
 import 'package:syncfusion_flutter_xlsio/xlsio.dart';
 import 'package:reporter/reporter.dart';
 
 import 'config.dart';
 
+class FullAssignmentResults {
+  final Range headerRange;
+  final Range dataRange;
+  final List<ReportCalculatedRange> calculatedHeaderRanges;
+  final List<ReportCalculatedRange> calculatedDataRanges;
+
+  const FullAssignmentResults({
+    required this.headerRange,
+    required this.dataRange,
+    required this.calculatedHeaderRanges,
+    required this.calculatedDataRanges,
+  });
+}
+
 class TabularReporterSfExcel {
-  static Range mapFromCalculatedRange({
+  static Range getExcelSurroundingRange({
+    required Worksheet sheet,
+    required List<ReportCalculatedRange> ranges,
+  }) {
+    int minCol = ranges.map((e) => e.range.columnIndex).min;
+    int maxCol = ranges.map((e) => e.range.endColumnIndex).max;
+    int minRow = ranges.map((e) => e.range.rowIndex).min;
+    int maxRow = ranges.map((e) => e.range.endRowIndex).max;
+    return sheet.getRangeByIndex(
+      minRow+ 1,
+      minCol+ 1,
+      maxRow+ 1,
+      maxCol+ 1,
+    );
+  }
+
+  static Range excelRangeFromCalculatedRange({
     required Worksheet sheet,
     required ReportCalculatedRange range,
   }) {
@@ -17,6 +48,57 @@ class TabularReporterSfExcel {
     );
   }
 
+  static FullAssignmentResults assignFullTableFromRowsAndColumns({
+    required Worksheet sheet,
+    required List<ReportRow> rows,
+    required List<ReportColumn> columns,
+    AssignCellsConfig config = const AssignCellsConfig(),
+    int offsetRows = 0,
+    int offsetColumns = 0,
+  }) {
+    final headerCells = TabularReporter.calculateHeaderCells(
+      columns: columns,
+      offsetColumnIndex: offsetColumns,
+      offsetRowIndex: offsetRows,
+    );
+    final headerRows = headerCells.map((e) => e.range.rowSpan).max;
+    final bodyCells = TabularReporter.calculateCells(
+      rows: rows,
+      columns: columns,
+      offsetColumnIndex: offsetColumns,
+      offsetRowIndex: offsetRows + headerRows,
+    );
+    assignFullTableFromCells(
+      sheet: sheet,
+      headerCells: headerCells,
+      bodyCells: bodyCells,
+      config: config,
+    );
+
+    return FullAssignmentResults(
+      headerRange: getExcelSurroundingRange(
+        sheet: sheet,
+        ranges: headerCells,
+      ),
+      dataRange: getExcelSurroundingRange(
+        sheet: sheet,
+        ranges: bodyCells,
+      ),
+      calculatedHeaderRanges: headerCells,
+      calculatedDataRanges: bodyCells,
+    );
+  }
+
+  static void assignFullTableFromCells({
+    required Worksheet sheet,
+    required List<ReportCalculatedRange> headerCells,
+    required List<ReportCalculatedRange> bodyCells,
+    AssignCellsConfig config = const AssignCellsConfig(),
+  }) {
+    assignCells(sheet: sheet, cells: headerCells, config: config);
+    assignCells(sheet: sheet, cells: bodyCells, config: config);
+  }
+
   static void assignCells({
     required Worksheet sheet,
     required List<ReportCalculatedRange> cells,
@@ -24,7 +106,7 @@ class TabularReporterSfExcel {
   }) {
     final func = config.assignValue;
     for (var cell in cells) {
-      final range = mapFromCalculatedRange(
+      final range = excelRangeFromCalculatedRange(
         range: cell,
         sheet: sheet,
       );
