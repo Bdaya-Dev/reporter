@@ -6,7 +6,7 @@ scripts:
   build:
     run: |
       melos exec -c 6 --fail-fast -- \
-        "flutter build web --no-pub"
+        "flutter build web --base-href reporter --no-pub"
     description: |
       Build a specific example app for web.
         - Requires `flutter channel stable`.
