@@ -1,0 +1,6 @@
+# melos_managed_dependency_overrides: _shared,reporter
+dependency_overrides:
+  _shared:
+    path: ..\\_shared
+  reporter:
+    path: ..\\reporter

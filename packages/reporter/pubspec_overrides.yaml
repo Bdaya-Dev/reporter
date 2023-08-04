@@ -1,0 +1,6 @@
+# melos_managed_dependency_overrides: _shared,_shared_addons
+dependency_overrides:
+  _shared:
+    path: ..\\_shared
+  _shared_addons:
+    path: ..\\_shared_addons
