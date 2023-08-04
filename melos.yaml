@@ -3,5 +3,17 @@ name: reporter
 packages:
   - packages/*
 scripts:
+  build:
+    run: |
+      melos exec -c 6 --fail-fast -- \
+        "flutter build web --no-pub"
+    description: |
+      Build a specific example app for web.
+        - Requires `flutter channel stable`.
+    packageFilters:
+      dirExists:
+        - web
+      scope: "*example*"
+
   analyze:
     exec: dart analyze .
