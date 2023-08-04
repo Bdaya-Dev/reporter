@@ -1,1 +1,1 @@
-check the [full example](../example)
+check the [full example](../../example)
