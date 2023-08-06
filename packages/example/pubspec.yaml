@@ -16,7 +16,7 @@ dependencies:
   file_saver: ^0.2.7
   html: ^0.15.4
   reporter: ^0.2.0
-  reporter_html: ^0.1.0
+  reporter_html: ^0.2.0
   reporter_syncfusion_flutter_xlsio: ^0.1.1
   _shared_addons:
     path: ../_shared_addons

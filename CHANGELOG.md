@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`reporter_html` - `v0.2.0`](#reporter_html---v020)
+
+---
+
+#### `reporter_html` - `v0.2.0`
+
+ - feat: added hooks to html generation config
+
+
+## 2023-08-06
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`reporter_html` - `v0.1.0`](#reporter_html---v010)
 
 ---

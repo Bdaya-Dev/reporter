@@ -1,3 +1,7 @@
+## 0.2.0
+
+ - feat: added hooks to html generation config
+
 ## 0.1.0
 
  - change createElementFromValue to accept Node instead of Element
