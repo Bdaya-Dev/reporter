@@ -50,9 +50,9 @@ class TabularReporterHtml {
         final cell = cells.first;
         cellElement.attributes['rowspan'] = cell.range.rowSpan.toString();
         cellElement.attributes['colspan'] = cell.range.colSpan.toString();
-        final valueElement = config.createElementFromValue?.call(cell);
-        if (valueElement != null) {
-          cellElement.append(valueElement);
+        final valueNode = config.createElementFromValue?.call(cell);
+        if (valueNode != null) {
+          cellElement.append(valueNode);
         } else {
           cellElement.text = cell.value.toString();
         }
