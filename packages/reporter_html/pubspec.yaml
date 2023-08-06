@@ -1,6 +1,6 @@
 name: reporter_html
 description: An addon for the package `reporter` that helps prepare html reports.
-version: 0.0.6+1
+version: 0.1.0
 repository: https://github.com/Bdaya-Dev/reporter/tree/main/packages/reporter_html
 topics:
   - reports

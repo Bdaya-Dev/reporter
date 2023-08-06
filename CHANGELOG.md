@@ -15,6 +15,29 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`reporter_html` - `v0.1.0`](#reporter_html---v010)
+
+---
+
+#### `reporter_html` - `v0.1.0`
+
+ - change createElementFromValue to accept Node instead of Element
+
+ - **FEAT**: relax createElementFromValue.
+
+
+## 2023-08-06
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`reporter` - `v0.2.0`](#reporter---v020)
  - [`reporter_syncfusion_flutter_xlsio` - `v0.1.1`](#reporter_syncfusion_flutter_xlsio---v011)
  - [`reporter_html` - `v0.0.6+1`](#reporter_html---v0061)

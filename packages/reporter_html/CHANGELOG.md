@@ -1,3 +1,9 @@
+## 0.1.0
+
+ - change createElementFromValue to accept Node instead of Element
+
+ - **FEAT**: relax createElementFromValue.
+
 ## 0.0.6+1
 
  - Update a dependency to the latest release.
