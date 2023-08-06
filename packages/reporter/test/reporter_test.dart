@@ -2,8 +2,6 @@ import 'package:_shared/_shared.dart';
 import 'package:reporter/reporter.dart';
 import 'package:test/test.dart';
 
-
-
 final columns = <ReportColumn>[
   ReportColumn(
     id: MyClient.kname,

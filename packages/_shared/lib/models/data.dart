@@ -38,4 +38,3 @@ final sampleData = <MyClient>[
     ],
   ),
 ];
-

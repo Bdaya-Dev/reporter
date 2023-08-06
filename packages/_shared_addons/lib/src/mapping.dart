@@ -1,7 +1,6 @@
 import 'package:_shared/_shared.dart';
 import 'package:reporter/reporter.dart';
 
-
 List<ReportRow> mapDataToRows(
   List<MyClient> clients,
 ) {

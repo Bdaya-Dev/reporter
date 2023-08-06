@@ -59,6 +59,7 @@ class ReportRange {
       rowIndex: rowIndex + rows,
     );
   }
+
   ReportRange shiftColumnsBy(int columns) {
     return copyWith(
       columnIndex: columnIndex + columns,
