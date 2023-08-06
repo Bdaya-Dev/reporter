@@ -47,8 +47,7 @@ class _SfXlsioReportGeneratorState extends State<SfXlsioReportGenerator> {
                     sheet: ws,
                     columns: myColumns,
                     rows: mapDataToRows(sampleData),
-                    config: AssignCellsConfig(
-                      //use this to merge the ranges
+                    sharedConfig: AssignCellsConfig(
                       postAssignValue: mergeCells
                           ? (calculatedRange, range) => range.merge()
                           : null,

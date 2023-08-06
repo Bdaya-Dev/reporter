@@ -28,10 +28,10 @@ class TabularReporterSfExcel {
     int minRow = ranges.map((e) => e.range.rowIndex).min;
     int maxRow = ranges.map((e) => e.range.endRowIndex).max;
     return sheet.getRangeByIndex(
-      minRow+ 1,
-      minCol+ 1,
-      maxRow+ 1,
-      maxCol+ 1,
+      minRow + 1,
+      minCol + 1,
+      maxRow + 1,
+      maxCol + 1,
     );
   }
 
@@ -52,7 +52,9 @@ class TabularReporterSfExcel {
     required Worksheet sheet,
     required List<ReportRow> rows,
     required List<ReportColumn> columns,
-    AssignCellsConfig config = const AssignCellsConfig(),
+    AssignCellsConfig sharedConfig = const AssignCellsConfig(),
+    AssignCellsConfig headerConfig = const AssignCellsConfig(),
+    AssignCellsConfig bodyConfig = const AssignCellsConfig(),
     int offsetRows = 0,
     int offsetColumns = 0,
   }) {
@@ -72,7 +74,9 @@ class TabularReporterSfExcel {
       sheet: sheet,
       headerCells: headerCells,
       bodyCells: bodyCells,
-      config: config,
+      sharedConfig: sharedConfig,
+      headerConfig: headerConfig,
+      bodyConfig: bodyConfig,
     );
 
     return FullAssignmentResults(
@@ -93,10 +97,20 @@ class TabularReporterSfExcel {
     required Worksheet sheet,
     required List<ReportCalculatedRange> headerCells,
     required List<ReportCalculatedRange> bodyCells,
-    AssignCellsConfig config = const AssignCellsConfig(),
+    AssignCellsConfig sharedConfig = const AssignCellsConfig(),
+    AssignCellsConfig headerConfig = const AssignCellsConfig(),
+    AssignCellsConfig bodyConfig = const AssignCellsConfig(),
   }) {
-    assignCells(sheet: sheet, cells: headerCells, config: config);
-    assignCells(sheet: sheet, cells: bodyCells, config: config);
+    assignCells(
+      sheet: sheet,
+      cells: headerCells,
+      config: sharedConfig.mergeWith(headerConfig),
+    );
+    assignCells(
+      sheet: sheet,
+      cells: bodyCells,
+      config: sharedConfig.mergeWith(bodyConfig),
+    );
   }
 
   static void assignCells({
