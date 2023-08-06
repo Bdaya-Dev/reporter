@@ -44,6 +44,10 @@ class TabularReporter {
     for (var column in columns) {
       final colSpan = column.columnSpan;
       final rowSpan = maxDepth - column.maxDepth + 1;
+      final columnIds = {
+        ...?parents[column.id],
+        column.id,
+      };
       res.add(
         ReportCalculatedRange(
           range: ReportRange(
@@ -52,13 +56,14 @@ class TabularReporter {
             columnIndex: columnIndex,
             rowSpan: rowSpan,
           ),
-          columnIds: {
-            ...?parents[column.id],
-            column.id,
-          },
+          columnIds: columnIds,
           directColumnId: column.id,
           value: column.name,
-          metadata: column.metadata,
+          metadata: {
+            r'isColumn': true,
+            for (var c in columnIds.map((e) => allColumns[e]).whereNotNull())
+              ...c.metadata,
+          },
         ),
       );
       _calculateHeaderCells(
