@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2023-08-06
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`reporter` - `v0.2.0`](#reporter---v020)
+ - [`reporter_syncfusion_flutter_xlsio` - `v0.1.1`](#reporter_syncfusion_flutter_xlsio---v011)
+ - [`reporter_html` - `v0.0.6+1`](#reporter_html---v0061)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `reporter_html` - `v0.0.6+1`
+
+---
+
+#### `reporter` - `v0.2.0`
+
+ - **FEAT**: add boolean isColumn metadata for cells that represent column headers.
+
+#### `reporter_syncfusion_flutter_xlsio` - `v0.1.1`
+
+ - **FEAT**: support merging excel configs.
+
+
 ## 2023-08-04
 
 ### Changes

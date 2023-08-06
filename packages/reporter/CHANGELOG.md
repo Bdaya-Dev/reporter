@@ -1,3 +1,7 @@
+## 0.2.0
+
+ - **FEAT**: add boolean isColumn metadata for cells that represent column headers.
+
 ## 0.1.4+1
 
  - readme update

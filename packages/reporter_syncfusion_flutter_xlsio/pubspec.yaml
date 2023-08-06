@@ -1,6 +1,6 @@
 name: reporter_syncfusion_flutter_xlsio
 description: An addon for the package `reporter` that uses `syncfusion_flutter_xlsio` to prepare excel reports.
-version: 0.1.0+1
+version: 0.1.1
 repository: https://github.com/Bdaya-Dev/reporter/tree/main/packages/reporter_syncfusion_flutter_xlsio
 
 environment:
@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   syncfusion_flutter_xlsio: ^22.2.7
-  reporter: ^0.1.4+1
+  reporter: ^0.2.0
   collection: ^1.17.0
 dev_dependencies:
   flutter_test:
