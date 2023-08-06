@@ -37,6 +37,7 @@ class TabularReporterHtml {
           row.groupListsBy((element) => element.range.columnIndex);
       final minColKey = colGroups.keys.min;
       final tr = _registerElement('tr', parent: res);
+
       for (var colIndex = minColKey; colIndex <= maxColIndex; colIndex++) {
         final cells = colGroups[colIndex];
         if (cells == null) {
@@ -48,6 +49,7 @@ class TabularReporterHtml {
         }
         final cellElement = _registerElement(cellElementTag, parent: tr);
         final cell = cells.first;
+
         cellElement.attributes['rowspan'] = cell.range.rowSpan.toString();
         cellElement.attributes['colspan'] = cell.range.colSpan.toString();
         final valueNode = config.createElementFromValue?.call(cell);
@@ -56,7 +58,9 @@ class TabularReporterHtml {
         } else {
           cellElement.text = cell.value.toString();
         }
+        config.postProcessCell?.call(cellElement, cell);
       }
+      config.postProcessRow?.call(tr, cells);
     }
     return res;
   }
