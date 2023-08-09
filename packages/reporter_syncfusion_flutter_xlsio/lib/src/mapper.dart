@@ -68,7 +68,7 @@ class TabularReporterSfExcel {
       rows: rows,
       columns: columns,
       offsetColumnIndex: offsetColumns,
-      offsetRowIndex: offsetRows + headerRows,
+      offsetRowIndex: offsetRows + headerRows + 1,
     );
     assignFullTableFromCells(
       sheet: sheet,
