@@ -1,3 +1,7 @@
+## 0.2.1
+
+ - **FEAT**: added hooks to html.
+
 ## 0.2.0
 
  - feat: added hooks to html generation config

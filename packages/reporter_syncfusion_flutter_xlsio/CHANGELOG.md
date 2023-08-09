@@ -1,3 +1,7 @@
+## 0.1.2
+
+ - **FIX**: offset body by 1 row.
+
 ## 0.1.1
 
  - **FEAT**: support merging excel configs.
