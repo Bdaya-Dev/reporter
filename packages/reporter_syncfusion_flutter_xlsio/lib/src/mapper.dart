@@ -7,14 +7,12 @@ import 'config.dart';
 class FullAssignmentResults {
   final Range headerRange;
   final Range dataRange;
-  final List<ReportCalculatedRange> calculatedHeaderRanges;
-  final List<ReportCalculatedRange> calculatedDataRanges;
 
+  final TableCalculationInfo calculationInfo;
   const FullAssignmentResults({
     required this.headerRange,
     required this.dataRange,
-    required this.calculatedHeaderRanges,
-    required this.calculatedDataRanges,
+    required this.calculationInfo,
   });
 }
 
@@ -58,38 +56,35 @@ class TabularReporterSfExcel {
     int offsetRows = 0,
     int offsetColumns = 0,
   }) {
-    final headerCells = TabularReporter.calculateHeaderCells(
+    final info = TabularReporter.calculateFullTable(
+      rows: rows,
       columns: columns,
       offsetColumnIndex: offsetColumns,
       offsetRowIndex: offsetRows,
     );
-    final headerRows = headerCells.map((e) => e.range.rowSpan).max;
-    final bodyCells = TabularReporter.calculateCells(
-      rows: rows,
-      columns: columns,
-      offsetColumnIndex: offsetColumns,
-      offsetRowIndex: offsetRows + headerRows + 1,
-    );
     assignFullTableFromCells(
       sheet: sheet,
-      headerCells: headerCells,
-      bodyCells: bodyCells,
+      headerCells: info.headerCells,
+      bodyCells: info.bodyCells,
       sharedConfig: sharedConfig,
       headerConfig: headerConfig,
       bodyConfig: bodyConfig,
     );
 
     return FullAssignmentResults(
-      headerRange: getExcelSurroundingRange(
-        sheet: sheet,
-        ranges: headerCells,
+      headerRange: sheet.getRangeByIndex(
+        offsetRows + 1,
+        offsetColumns + 1,
+        offsetRows + info.headerRowSpan,
+        offsetColumns + info.columnSpan,
       ),
-      dataRange: getExcelSurroundingRange(
-        sheet: sheet,
-        ranges: bodyCells,
+      dataRange: sheet.getRangeByIndex(
+        offsetRows + 1 + info.headerRowSpan,
+        offsetColumns + 1,
+        offsetRows + info.headerRowSpan + info.bodyRowSpan,
+        offsetColumns + info.columnSpan,
       ),
-      calculatedHeaderRanges: headerCells,
-      calculatedDataRanges: bodyCells,
+      calculationInfo: info,
     );
   }
 
