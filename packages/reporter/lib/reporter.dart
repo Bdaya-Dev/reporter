@@ -5,6 +5,7 @@ library;
 
 export 'src/calculated_range.dart';
 export 'src/column_value_assignment.dart';
+export 'src/table_calculation_info.dart';
 export 'src/column.dart';
 export 'src/range.dart';
 export 'src/tabular_reporter.dart';

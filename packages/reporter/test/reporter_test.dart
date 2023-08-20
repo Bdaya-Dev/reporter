@@ -264,7 +264,7 @@ void main() {
     const rowOffset = 5;
     const colOffset = 3;
 
-    final cells = TabularReporter.calculateCells(
+    final cells = TabularReporter.calculateBodyCells(
       columns: columns,
       rows: mapDataToRows(sampleData),
       offsetColumnIndex: colOffset,

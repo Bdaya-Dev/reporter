@@ -4,6 +4,35 @@ import 'package:reporter/reporter.dart';
 /// A utility class for generating tabular reports (like spreadsheets)
 /// from arbitrary data.
 class TabularReporter {
+  static TableCalculationInfo calculateFullTable({
+    required List<ReportRow> rows,
+    required List<ReportColumn> columns,
+    int offsetRowIndex = 0,
+    int offsetColumnIndex = 0,
+  }) {
+    final headerRowSpan = columns.map((e) => e.maxDepth).max;
+    final headerCells = calculateHeaderCells(
+      columns: columns,
+      offsetColumnIndex: offsetColumnIndex,
+      offsetRowIndex: offsetRowIndex,
+    );
+    final bodyCells = calculateBodyCells(
+      rows: rows,
+      columns: columns,
+      offsetColumnIndex: offsetColumnIndex,
+      offsetRowIndex: offsetRowIndex + headerRowSpan,
+    );
+    return TableCalculationInfo(
+      columns: List.unmodifiable(columns),
+      rows: List.unmodifiable(rows),
+      bodyCells: bodyCells,
+      headerCells: headerCells,
+      headerRowSpan: headerRowSpan,
+      columnSpan: columns.map((e) => e.columnSpan).sum,
+      bodyRowSpan: rows.map((e) => e.rowSpan).sum,
+    );
+  }
+
   static List<ReportCalculatedRange> calculateHeaderCells({
     required List<ReportColumn> columns,
     int offsetRowIndex = 0,
@@ -80,7 +109,7 @@ class TabularReporter {
   }
 
   /// Takes the rows and columns and transforms them to ranges with values.
-  static List<ReportCalculatedRange> calculateCells({
+  static List<ReportCalculatedRange> calculateBodyCells({
     required List<ReportRow> rows,
     required List<ReportColumn> columns,
     int offsetRowIndex = 0,
