@@ -70,21 +70,12 @@ class TabularReporterHtml {
     required List<ReportColumn> columns,
     ReporterHtmlConfig config = const ReporterHtmlConfig(),
   }) {
-    final headerCells = TabularReporter.calculateHeaderCells(
-      columns: columns,
-      offsetColumnIndex: 0,
-      offsetRowIndex: 0,
-    );
-    final headerRows = headerCells.map((e) => e.range.rowSpan).max;
-    final bodyCells = TabularReporter.calculateCells(
-      rows: rows,
-      columns: columns,
-      offsetColumnIndex: 0,
-      offsetRowIndex: headerRows,
-    );
+    final info = TabularReporter.calculateFullTable(rows: rows, columns: columns);
+    
+    
     return generateFullTableFromCells(
-      headerCells: headerCells,
-      bodyCells: bodyCells,
+      headerCells: info.headerCells,
+      bodyCells: info.bodyCells,
       config: config,
     );
   }
