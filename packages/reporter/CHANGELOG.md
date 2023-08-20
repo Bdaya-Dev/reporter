@@ -1,3 +1,7 @@
+## 0.3.0
+
+ - **FIX**: calculation mistakes, and introduce calculateFullTable.
+
 ## 0.2.0
 
  - **FEAT**: add boolean isColumn metadata for cells that represent column headers.

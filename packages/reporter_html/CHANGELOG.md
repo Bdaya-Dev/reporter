@@ -1,3 +1,7 @@
+## 0.3.0
+
+ - **FEAT**(reporter_html): use calculateFullTable.
+
 ## 0.2.1
 
  - **FEAT**: added hooks to html.

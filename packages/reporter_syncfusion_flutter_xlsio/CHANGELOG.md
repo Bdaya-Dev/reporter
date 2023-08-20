@@ -1,3 +1,7 @@
+## 0.2.0
+
+ - **FEAT**(reporter_syncfusion_flutter_xlsio): use calculateFullTable, and fix range calculations.
+
 ## 0.1.2
 
  - **FIX**: offset body by 1 row.
