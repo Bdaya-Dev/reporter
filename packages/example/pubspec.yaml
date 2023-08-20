@@ -24,7 +24,6 @@ dependencies:
     path: ../_shared
   collection: ^1.17.1
   url_launcher: ^6.1.12
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
